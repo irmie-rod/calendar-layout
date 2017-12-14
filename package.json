@@ -1,0 +1,25 @@
+{
+  "name": "calendar-layout",
+  "version": "1.0.0",
+  "description": "simple calendar layout using css-grid",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irmie-rod/calendar-layout.git"
+  },
+  "keywords": [
+    "calendar"
+  ],
+  "dependencies": {
+    "date-fns": "^1.29.0"
+  },
+  "author": "Irma Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irmie-rod/calendar-layout/issues"
+  },
+  "homepage": "https://github.com/irmie-rod/calendar-layout#readme"
+}
