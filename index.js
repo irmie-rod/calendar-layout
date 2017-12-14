@@ -2,42 +2,34 @@
   let currentDate = new Date();
   let currentYear = currentDate.getFullYear();
   let currentMonth = currentDate.getMonth();
+  let currentMonthName = currentDate.toLocaleString(navigator.language, { month: 'long' });
+
   let firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
   let daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-  console.log(firstDayOfMonth);
-  console.log(daysInMonth);
-
   let calendarDOM = '';
-
-  // let days = [];
-
   let currentDay = 1;
 
-  for(var i=0; i<6; i++) {
-    // let week = [];
-    // days.push(week);
+  // build calendarDOM string with the current day in the grid
+  for(let i=0; i<6; i++) {
+    calendarDOM += '<div class="week">';
 
-    calendarDOM += '<div class="week">'
-
-    for(var j=0; j<7; j++) {
-      calendarDOM += '<div class="day">'
+    for(let j=0; j<7; j++) {
+      calendarDOM += '<div class="day">';
       if(i === 0 && j < firstDayOfMonth) {
-        // week.push(null);
-        calendarDOM += ''
+        calendarDOM += '';
       }
       else if(currentDay <= daysInMonth) {
-        // week.push(currentDay);
         calendarDOM += currentDay;
         currentDay++;
       }
-      calendarDOM += '</div>'
+      calendarDOM += '</div>';
 
     }
-    calendarDOM += '</div>'
-    // days.push(week);
-    // console.log(days);
+    calendarDOM += '</div>';
   }
 
-  document.querySelector('.month').insertAdjacentHTML( 'beforeend', calendarDOM );
+  // manipulate DOM with days of the month
+  document.querySelector('.month-grid').insertAdjacentHTML( 'beforeend', calendarDOM );
+  document.querySelector('.month-label').innerHTML = currentMonthName;
 })()
