@@ -27,6 +27,10 @@ body {
   padding: 5px;
 }
 
+.day:empty{
+  background-color: #FFF;
+}
+
 .week.-labels .day {
   background-color: #FFF;
   border: none;

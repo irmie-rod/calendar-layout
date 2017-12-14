@@ -10,27 +10,21 @@
 
   let calendarDOM = '';
 
-  // let days = [
-  //   // [null, null, null, null, null, 1, 2],
-  //   // [3, 4, 5, 6, 7, 8, 9, 10],
-  //   // [],
-  //   // [],
-  //   // []
-  // ];
+  // let days = [];
 
   let currentDay = 1;
 
   for(var i=0; i<6; i++) {
     // let week = [];
-
     // days.push(week);
+
     calendarDOM += '<div class="week">'
 
     for(var j=0; j<7; j++) {
       calendarDOM += '<div class="day">'
       if(i === 0 && j < firstDayOfMonth) {
         // week.push(null);
-        calendarDOM += '&nbsp;'
+        calendarDOM += ''
       }
       else if(currentDay <= daysInMonth) {
         // week.push(currentDay);
